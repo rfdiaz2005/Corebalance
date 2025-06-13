@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corebalance Articles</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      margin: 0;
+      color: white;
+    }
+
+    header {
+      background-color: #333333;
+      color: yellow;
+      padding: 2rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: yellow;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: white;
+    }
+
+    main.articles {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    article.article {
+      background: #222222;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.7);
+      margin-bottom: 2rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      color: white;
+    }
+
+    article.article img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    article.article h2 {
+      margin: 1rem;
+      color: yellow;
+      font-weight: 700;
+    }
+
+    article.article .date {
+      margin: 0 1rem 0.5rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    article.article .snippet {
+      margin: 0 1rem 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    article.article a {
+      margin: 0 1rem 1.5rem;
+      color: yellow;
+      font-weight: bold;
+      text-decoration: none;
+      align-self: flex-start;
+      transition: color 0.3s ease;
+    }
+
+    article.article a:hover {
+      text-decoration: underline;
+      color: #ffd700;
+    }
+
+    /* CTA return section */
+    .cta {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #1a1a1a;
+    }
+
+    .cta h2 {
+      color: yellow;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      background-color: white;
+      color: #333;
+      font-weight: bold;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #555;
+      color: yellow;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #333333;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      article.article img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏋️ Corebalance Articles</h1>
+    <p>Tips, routines, and motivation to power your fitness journey.</p>
+  </header>
+
+  <main class="articles">
+    <article class="article">
+      <img src="girl.jpg" alt="Weightlifting">
+      <h2>💪 Strength Training Basics for Beginners</h2>
+      <p class="date">June 7, 2025</p>
+      <p class="snippet">Learn the essentials of strength training to build muscle, improve endurance, and avoid injuries in your gym sessions.</p>
+      <a href="train.html">Read More</a>
+    </article>
+
+    <article class="article">
+      <img src="run.jpg" alt="Gym Cardio">
+      <h2>🔥 Best Cardio Workouts for Fat Loss</h2>
+      <p class="date">June 5, 2025</p>
+      <p class="snippet">Discover effective cardio exercises to burn fat, boost metabolism, and improve your heart health.</p>
+      <a href="cardio.html">Read More</a>
+    </article>
+
+    <article class="article">
+      <img src="stretch.jpg" alt="Yoga and Recovery">
+      <h2>🧘‍♀️ Importance of Recovery and Stretching</h2>
+      <p class="date">June 2, 2025</p>
+      <p class="snippet">Recovery is key! Learn how stretching and rest days can improve your performance and reduce injury risk.</p>
+      <a href="recover.html">Read More</a>
+    </article>
+  </main>
+
+  <section class="cta">
+    <h2>Give your body the care it deserves!</h2>
+    <a href="index.html">← Return to Home</a> 
+  </section>
+
+  <footer>
+    <p>&copy; 2025 corebalance. All rights reserved.</p>
+  </footer>
+</body>
+</html>

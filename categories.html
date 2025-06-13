@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wellness & Nutrition</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+    }
+
+    .back-button a button {
+      background-color: #f8cb8c;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .section {
+      padding: 60px 20px;
+      color: #fff;
+    }
+
+    .fitness-section {
+      background: url('https://images.unsplash.com/photo-1584467735871-0f9419f4a876') no-repeat center center/cover;
+      position: relative;
+    }
+
+    .fitness-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .fitness-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .fitness-content h2 {
+      font-size: 2.5rem;
+      color: #f8cb8c;
+    }
+
+    .fitness-content p {
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+      color: #fff;
+    }
+
+    .card-content h4 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .card-content a button {
+      margin-top: 10px;
+      background: #f8cb8c;
+      border: none;
+      color: #000;
+      padding: 8px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .nutrition-section {
+      background: #3d3b3b;
+      text-align: center;
+      color: #fff;
+    }
+
+    .nutrition-section h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .nutrition-section p {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+    }
+
+    .nutrition-section input[type="text"] {
+      padding: 12px 50px 12px 40px;
+      border-radius: 40px;
+      border: none;
+      width: 80%;
+      max-width: 500px;
+      font-size: 1rem;
+      background-color: #fff;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 12px center;
+    }
+
+    .tags {
+      margin-top: 20px;
+    }
+
+    .tags span {
+      background-color: #555;
+      padding: 8px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      display: inline-block;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <div class="back-button">
+    <a href="index.html"><button>CoreBalance</button></a>
+  </div>
+
+  <!-- Section 1: Fitness -->
+  <section class="section fitness-section">
+    <div class="fitness-content">
+      <h2>Fitness and Wellness</h2>
+      <p>Move with purpose. Fitness strengthens not just the body but the mind too. And encourages mental and emotional well-being through self-care practices.</p>
+      
+      <div class="card-grid">
+        <div class="card">
+          <img src="begi.jpg" alt="Workout">
+          <div class="card-content">
+            <h4>Beginner Workouts</h4>
+            <p>Build strength with simple daily routines.</p>
+            <a href="begin.html"><button>Learn more</button></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="beg.jpg" alt="Targeted Fitness">
+          <div class="card-content">
+            <h4>Targeted Fitness</h4>
+            <p>Arms, abs, legs — master full-body training.</p>
+            <a href="targetfit.html"><button>Learn more</button></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="mind.jpg" alt="Mindfulness">
+          <div class="card-content">
+            <h4>Daily Mindfulness</h4>
+            <p>Yoga, breathing, journaling, gratitude & more.</p>
+            <a href="daily.html"><button>Learn more</button></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="sleep.jpg" alt="Rest">
+          <div class="card-content">
+            <h4>Sleep & Rest</h4>
+            <p>Improve your recovery and performance.</p>
+            <a href="sleep.html"><button>Learn more</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Nutrition -->
+  <section class="section nutrition-section">
+    <h2>Good nutrition fuels every part of your life. Eat smart, live well.</h2>
+    <p>Find the Right Food for Your Body</p>
+    <p>Search any nutrient, food, or health goal — we’ll show you what to eat.</p>
+    <input type="text" placeholder="Search here...">
+    <div class="tags">
+      <span>#Protein</span>
+      <span>#Iron</span>
+      <span>#WeightLoss</span>
+      <span>#HealthySnacks</span>
+    </div>
+  </section>
+
+</body>
+</html>

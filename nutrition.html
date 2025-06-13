@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nutrition Tips | CoreBalance</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #808080;
+      color: white;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: #ffdd00;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 10px #bfa900cc;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .tip {
+      display: flex;
+      gap: 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .tip:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px #ffdd00cc;
+    }
+
+    .tip img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.7));
+    }
+
+    .tip-content {
+      flex: 1;
+    }
+
+    .tip-content h2 {
+      color: #ffdd00;
+      margin: 0 0 0.5rem;
+    }
+
+    .nutrition-info {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+      margin-top: 3rem;
+    }
+
+    .nutrition-info h2 {
+      color: #ffdd00;
+      margin-top: 0;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+      max-width: 600px;
+    }
+
+    .cta h2 {
+      color: #ffdd00;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .cta a {
+      background-color: #ffdd00;
+      color: black;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 30px;
+      display: inline-block;
+      box-shadow: 0 0 10px #ffdd00aa;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #bfa900;
+      box-shadow: 0 0 15px #bfa900;
+    }
+
+    footer {
+      background: #3d3d3d;
+      color: #ffdd00;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .tip {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .tip img {
+        width: 100%;
+        height: 200px;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .tip-content {
+        padding-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Gym Nutrition Tips</h1>
+  </header>
+
+  <main>
+    <!-- Tips Section -->
+    <section class="tip">
+      <img src="protein.jpg" alt="Protein Shake">
+      <div class="tip-content">
+        <h2>Prioritize Protein</h2>
+        <p>Protein helps build and repair muscle. Include chicken, fish, eggs, or plant-based protein in your diet.</p>
+      </div>
+    </section>
+
+    <section class="tip">
+      <img src="carbs.jpg" alt="Healthy Carbs">
+      <div class="tip-content">
+        <h2>Fuel with Carbs</h2>
+        <p>Whole grains, fruits, and veggies provide energy for workouts. Don’t fear healthy carbs!</p>
+      </div>
+    </section>
+
+    <section class="tip">
+      <img src="tubig.jpg" alt="Hydration">
+      <div class="tip-content">
+        <h2>Stay Hydrated</h2>
+        <p>Water helps regulate body temperature and muscle function. Drink water before, during, and after workouts.</p>
+      </div>
+    </section>
+
+    <section class="tip">
+      <img src="pro.jpg" alt="Post Workout">
+      <div class="tip-content">
+        <h2>Post-Workout Fuel</h2>
+        <p>Eat protein and carbs after your workout to help recover and build strength.</p>
+      </div>
+    </section>
+
+    <section class="nutrition-info">
+      <h2>Why Gym Nutrition Matters</h2>
+      <p>Nutrition is essential for fitness progress. Your body needs fuel to perform, recover, and grow stronger.</p>
+      <p>Protein supports muscle repair, carbs give energy, and healthy fats balance hormones. Staying hydrated keeps everything functioning at its best.</p>
+      <p>With the right diet, you’ll recover faster, lift more, and train harder!</p>
+    </section>
+
+    <section class="cta">
+      <h2>Ready to power up your fitness?</h2>
+      <a href="index.html">← Return to Home</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 CoreBalance. All rights reserved.
+  </footer>
+
+</body>
+</html>

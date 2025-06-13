@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Tips | CoreBalance</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #808080;
+      color: white;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(255 255 255 / 0.15);
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    header h1 {
+      font-weight: 600;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: black;
+      user-select: none;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+
+    .intro {
+      background: rgba(0, 0, 0, 0.4);
+      border-left: 6px solid #ffdd00;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(255, 221, 0, 0.3);
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      color: #ffdd00;
+      font-size: 1.8rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #ffffff;
+    }
+
+    section.tip {
+      background: rgba(0 0 0 / 0.3);
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      overflow: hidden;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: slideUpFade 0.8s forwards;
+      animation-delay: var(--delay);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    section.tip:hover {
+      transform: translateY(0) scale(1.03);
+      box-shadow: 0 12px 30px #ffdd00cc;
+      background: rgba(0 0 0 / 0.5);
+    }
+
+    @keyframes slideUpFade {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    section.tip img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 15px 0 0 15px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+      transition: filter 0.3s ease;
+    }
+
+    section.tip:hover img {
+      filter: drop-shadow(0 4px 10px #ffdd00cc);
+    }
+
+    section.tip .content {
+      padding: 1.25rem 2rem;
+      color: white;
+      flex: 1;
+    }
+
+    section.tip .content h2 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #ffdd00; /* Yellow title */
+      user-select: text;
+    }
+
+    section.tip .content p {
+      font-size: 1rem;
+      color: white;
+      user-select: text;
+    }
+
+    .cta {
+      background: #2e2e2e;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 4px solid #ffdd00;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+      margin-top: 3rem;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      color: #ffdd00;
+      margin-bottom: 1rem;
+    }
+
+    .cta a {
+      background: #ffdd00;
+      color: black;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 0 10px #ffdd00cc;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta a:hover {
+      background-color: #bfa900;
+      box-shadow: 0 0 18px #bfa900;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #3d3d3d;
+      color: #ffdd00;
+      font-weight: 600;
+      user-select: none;
+    }
+
+    section.tip:nth-child(2) { --delay: 0.2s; }
+    section.tip:nth-child(3) { --delay: 0.4s; }
+    section.tip:nth-child(4) { --delay: 0.6s; }
+    section.tip:nth-child(5) { --delay: 0.8s; }
+    section.tip:nth-child(6) { --delay: 1s; }
+
+    @media (max-width: 640px) {
+      section.tip {
+        flex-direction: column;
+      }
+      section.tip img {
+        width: 100%;
+        height: 200px;
+        border-radius: 15px 15px 0 0;
+      }
+      section.tip .content {
+        padding: 1.25rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Fitness Tips</h1>
+</header>
+
+<main>
+  <section class="intro">
+    <h2>Train Smart. Live Strong.</h2>
+    <p>Welcome to your daily fitness inspiration! Whether you’re a beginner or a pro, these tips will push you closer to your physical goals. Fuel your body, move with purpose, and get results.</p>
+  </section>
+
+  <section class="tip">
+    <img src="begi.jpg" alt="Strength Training" />
+    <div class="content">
+      <h2>Strength Training</h2>
+      <p>Include strength workouts 2–3 times a week focusing on compound movements like squats, deadlifts, and bench presses.</p>
+    </div>
+  </section>
+
+  <section class="tip">
+    <img src="cardio.jpg" alt="Cardio Workout" />
+    <div class="content">
+      <h2>Cardio Sessions</h2>
+      <p>Incorporate cardio exercises such as running, cycling, or HIIT to improve heart health and endurance.</p>
+    </div>
+  </section>
+
+  <section class="tip">
+    <img src="beg.jpg" alt="Proper Form" />
+    <div class="content">
+      <h2>Focus on Form</h2>
+      <p>Good form helps prevent injuries. Always perform exercises with control and proper technique.</p>
+    </div>
+  </section>
+
+  <section class="tip">
+    <img src="rest.jpg" alt="Recovery" />
+    <div class="content">
+      <h2>Rest & Recovery</h2>
+      <p>Allow your muscles time to recover with rest days and sleep. Recovery is essential for progress.</p>
+    </div>
+  </section>
+
+  <section class="tip">
+    <img src="tubig.jpg" alt="Hydration" />
+    <div class="content">
+      <h2>Stay Hydrated</h2>
+      <p>Drink water throughout the day and during workouts to maintain performance and avoid dehydration.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to power up your fitness?</h2>
+    <a href="index.html">Return to Home</a>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 CoreBalance. All rights reserved.
+</footer>
+
+</body>
+</html>

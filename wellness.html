@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wellness Tips | CoreBalance</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #808080;
+      margin: 0;
+      color: white;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #555555;
+      color: #ffdd00;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px #bfa900cc;
+      user-select: none;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffdd00;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .intro {
+      background: rgba(0, 0, 0, 0.4);
+      border-left: 6px solid #ffdd00;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(255, 221, 0, 0.3);
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      color: #ffdd00;
+      font-size: 1.8rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #ffffff;
+    }
+
+    .tip {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+      margin-bottom: 2rem;
+      padding: 1rem;
+      cursor: default;
+      user-select: text;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .tip:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px #ffdd00cc;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .tip img {
+      width: 140px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(255, 221, 0, 0.5);
+    }
+
+    .tip-content {
+      flex: 1;
+    }
+
+    .tip h2 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      color: #ffdd00;
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    .tip p {
+      margin-bottom: 0;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .cta {
+      background: #2e2e2e;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 4px solid #ffdd00;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+      margin-top: 3rem;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      color: #ffdd00;
+      margin-bottom: 1rem;
+    }
+
+    .cta a {
+      background: #ffdd00;
+      color: black;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 0 10px #ffdd00cc;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta a:hover {
+      background-color: #bfa900;
+      box-shadow: 0 0 18px #bfa900;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #3d3d3d;
+      color: #ffdd00;
+      font-weight: 600;
+      user-select: none;
+    }
+
+    @media(max-width: 600px) {
+      main {
+        margin: 1rem;
+      }
+
+      .tip {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .tip img {
+        width: 100%;
+        height: 180px;
+      }
+
+      .tip-content {
+        padding-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Wellness Tips</h1>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Boost Your Wellbeing</h2>
+      <p>Welcome to CoreBalance’s Wellness Tips! Your daily dose of positive habits to help you feel energized, focused, and balanced. These simple tips are designed to guide you on your wellness journey — mind, body, and soul.</p>
+    </section>
+
+    <section class="tip">
+      <img src="self.jpg" alt="Self Care">
+      <div class="tip-content">
+        <h2>Practice Self-Care</h2>
+        <p>Take time every day to relax and recharge. Prioritize activities that make you feel good mentally and physically.</p>
+      </div>
+    </section>
+
+    <section class="tip">
+      <img src="rest.jpg" alt="Sleep">
+      <div class="tip-content">
+        <h2>Get Enough Sleep</h2>
+        <p>Aim for 7-9 hours of quality sleep each night to help your body recover and keep your mind sharp.</p>
+      </div>
+    </section>
+
+    <section class="tip">
+      <img src="prac.jpg" alt="Mindfulness">
+      <div class="tip-content">
+        <h2>Practice Mindfulness</h2>
+        <p>Spend a few minutes daily focusing on your breath or practicing meditation to reduce stress and improve focus.</p>
+      </div>
+    </section>
+
+    <section class="tip">
+      <img src="stay.jpg" alt="Stay Active">
+      <div class="tip-content">
+        <h2>Stay Active</h2>
+        <p>Regular movement boosts your mood and energy. Find activities you enjoy and make them part of your routine.</p>
+      </div>
+    </section>
+
+    <section class="tip">
+      <img src="maintain.jpg" alt="Balanced Diet">
+      <div class="tip-content">
+        <h2>Maintain a Balanced Diet</h2>
+        <p>Eat a variety of nutrient-rich foods to support your overall wellness and keep your body fueled.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Ready to build a healthier lifestyle?</h2>
+      <a href="index.html">Return to Home</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 CoreBalance. All rights reserved.
+  </footer>
+
+</body>
+</html>

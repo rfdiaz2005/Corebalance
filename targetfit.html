@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Targeted Fitness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      position: relative;
+      background: linear-gradient(to right, #333333, #555555);
+      color: #ffdd00;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #ffdd00;
+    }
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      border: 2px solid #ffdd00;
+      color: #ffdd00;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 1rem;
+    }
+    .back-button:hover {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2, h3 {
+      font-size: 2rem;
+      color: #ffdd00;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ffdd00;
+      padding-bottom: 10px;
+    }
+    .routine {
+      background: #222;
+      border-left: 5px solid #ffdd00;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(255, 221, 0, 0.3);
+    }
+    ul {
+      padding-left: 20px;
+      list-style-type: none;
+    }
+    ul li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #fff;
+    }
+    ul li img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .faq {
+      background: #222;
+      border-left: 5px solid #ffdd00;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(255, 221, 0, 0.3);
+      color: #fff;
+      margin-bottom: 60px;
+    }
+    .faq-question {
+      cursor: pointer;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ffdd00;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-bottom: 15px;
+      color: #fff;
+      padding-left: 10px;
+    }
+    footer {
+      background: #333;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="categories.html" class="back-button">← Back to Categories</a>
+    <h1>Targeted Fitness</h1>
+    <p>Arms, abs, legs, chest, back, flexibility — master full-body training.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Arm Routine</h2>
+      <div class="routine">
+        <ul>
+          <li>
+            <img src="pushup.jpg" alt="Push-ups" />
+            10 Push-ups
+          </li>
+          <li>
+            <img src="tricepdips.jpg" alt="Tricep Dips" />
+            12 Tricep Dips
+          </li>
+          <li>
+            <img src="bicepcurls.jpg" alt="Bicep Curls" />
+            15 Bicep Curls (use bottles if no weights)
+          </li>
+          <li>
+            <img src="shoulder presses.jpg" alt="Shoulder Presses" />
+            15 Shoulder Presses
+          </li>
+          <li>
+            <img src="armcircle.jpg" alt="Arm Circles" />
+            20-Second Arm Circles
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Abs Routine</h2>
+      <div class="routine">
+        <ul>
+          <li>
+            <img src="crunches.jpg" alt="Crunches" />
+            20 Crunches
+          </li>
+          <li>
+            <img src="bicylekicks.jpg" alt="Bicycle Kicks" />
+            15 Bicycle Kicks
+          </li>
+          <li>
+            <img src="plank.jpg" alt="Plank" />
+            30-Second Plank
+          </li>
+          <li>
+            <img src="legraises.jpg" alt="Leg Raises" />
+            20 Leg Raises
+          </li>
+          <li>
+            <img src="russiontwist.jpg" alt="Russian Twists" />
+            30 Russian Twists
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Chest Routine</h2>
+      <div class="routine">
+        <ul>
+          <li>
+            <img src="pushup.jpg" alt="Push-ups" />
+            15 Push-ups
+          </li>
+          <li>
+            <img src="incline.jpg" alt="Incline Push-ups" />
+            10 Incline Push-ups
+          </li>
+          <li>
+            <img src="decline.jpg" alt="Decline Push-ups" />
+            10 Decline Push-ups
+          </li>
+          <li>
+            <img src="Chest Flys.jpg" alt="Chest Flys" />
+            15 Chest Flys (use bottles or weights)
+          </li>
+          <li>
+            <img src="wide.jpg" alt="Wide Push-ups" />
+            12 Wide Push-ups
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Back Routine</h2>
+      <div class="routine">
+        <ul>
+          <li>
+            <img src="superman.jpg" alt="Superman Hold" />
+            20-Second Superman Hold
+          </li>
+          <li>
+            <img src="reverse.jpg" alt="Reverse Flys" />
+            15 Reverse Flys (use bottles or weights)
+          </li>
+          <li>
+            <img src="bridge.jpg" alt="Bridge" />
+            20 Bridge Lifts
+          </li>
+          <li>
+            <img src="birddog.jpg" alt="Bird Dog" />
+            15 Bird Dog (each side)
+          </li>
+          <li>
+            <img src="reverseplank.jpg" alt="Reverse Plank" />
+            30-Second Reverse Plank
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Legs Routine</h2>
+      <div class="routine">
+        <ul>
+          <li>
+            <img src="bodyweightsquats.jpg" alt="Bodyweight Squats" />
+            15 Bodyweight Squats
+          </li>
+          <li>
+            <img src="lunges.jpg" alt="Lunges" />
+            10 Lunges (each leg)
+          </li>
+          <li>
+            <img src="glutebridges.jpg" alt="Glute Bridges" />
+            20 Glute Bridges
+          </li>
+          <li>
+            <img src="calfraises.jpg" alt="Calf Raises" />
+            20 Calf Raises
+          </li>
+          <li>
+            <img src="jumpsquats.jpg" alt="Jump Squats" />
+            15 Jump Squats
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Flexibility Routine</h2>
+      <div class="routine">
+        <ul>
+          <li>
+            <img src="hamstringstretch.jpg" alt="Hamstring Stretch" />
+            30-Second Hamstring Stretch (each leg)
+          </li>
+          <li>
+            <img src="catcow.jpg" alt="Cat-Cow Stretch" />
+            10 Cat-Cow Stretches
+          </li>
+          <li>
+            <img src="HamstringStretch.jpg" alt="Shoulder Stretch" />
+            30-Second Shoulder Stretch (each side)
+          </li>
+          <li>
+            <img src="Quadstretch.jpg" alt="Quad Stretch" />
+            30-Second Quad Stretch (each leg)
+          </li>
+          <li>
+            <img src="CobraStretch.jpg" alt="Cobra Stretch" />
+            20-Second Cobra Stretch
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>FAQs</h2>
+      <div>
+        <div class="faq-question">How long should a beginner workout last?</div>
+        <div class="faq-answer">Typically, 20-30 minutes per session is enough to start with.</div>
+      </div>
+      <div>
+        <div class="faq-question">How often should I work out as a beginner?</div>
+        <div class="faq-answer">Aim for 3-4 times per week with rest days in between.</div>
+      </div>
+      <div>
+        <div class="faq-question">Do I need any equipment?</div>
+        <div class="faq-answer">No equipment is needed to start — bodyweight exercises work great!</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Corebalance Fitness. All rights reserved.
+  </footer>
+
+  <script>
+    // FAQ toggle functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

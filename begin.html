@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beginner Workouts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #2e2e2e;
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: #ffd700;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #fff176;
+    }
+
+    a.back-link {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 6px 12px;
+      border: 2px solid #ffd700;
+      border-radius: 5px;
+      background: transparent;
+      color: #ffd700;
+      z-index: 1000;
+    }
+    a.back-link:hover {
+      background: #ffd700;
+      color: #2e2e2e;
+    }
+
+    header {
+      background: #1e1e1e;
+      color: #ffd700;
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #ffffff;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+
+    h2.section-title {
+      font-size: 2.5rem;
+      color: #ffd700;
+      font-weight: 600;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #ffd700;
+      padding-bottom: 8px;
+    }
+
+    .tips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .tip-card {
+      background: #3c3c3c;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tip-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 25px rgba(255, 215, 0, 0.25);
+    }
+    .tip-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .tip-card h3 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+    .tip-card p {
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    .daily-routine {
+      background: #444;
+      border-radius: 10px;
+      padding: 30px 25px;
+      box-shadow: 0 6px 15px rgba(255, 215, 0, 0.15);
+      margin: 50px auto;
+      max-width: 600px;
+    }
+    .daily-routine h3 {
+      color: #ffd700;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .daily-routine ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 50px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(255, 215, 0, 0.15);
+    }
+    thead {
+      background-color: #ffd700;
+      color: #2e2e2e;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    th, td {
+      padding: 15px 20px;
+      text-align: center;
+      border-bottom: 1px solid #666;
+    }
+    tbody tr:hover {
+      background-color: #383838;
+    }
+
+    .quote-section {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background-color: #3a3a3a;
+      border-left: 6px solid #ffd700;
+      font-style: italic;
+      font-size: 1.5rem;
+      color: #ffd700;
+      text-align: center;
+    }
+
+    .faq {
+      max-width: 900px;
+      margin: 60px auto 80px;
+      padding: 30px 25px;
+      background: #3b3b3b;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(255, 215, 0, 0.15);
+    }
+    .faq-question {
+      background: #ffd700;
+      color: #2e2e2e;
+      font-weight: 600;
+      padding: 15px 20px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .faq-question:hover {
+      background-color: #fff176;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 20px;
+      font-size: 1rem;
+      color: #fff;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .faq-answer.open {
+      max-height: 300px;
+      padding: 15px 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      background-color: #1a1a1a;
+      color: #aaa;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      h2.section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="categories.html" class="back-link">← Back</a>
+
+  <header>
+    <h1>Beginner Workouts</h1>
+    <p>Build strength and confidence with simple daily routines designed for everyone.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">Workout Tips</h2>
+      <div class="tips">
+        <article class="tip-card">
+          <img src="stretch.jpg" alt="Stretching Tips" />
+          <h3>Start with Stretching</h3>
+          <p>Begin each session with 5–10 minutes of dynamic stretching to prepare your body.</p>
+        </article>
+        <article class="tip-card">
+          <img src="weyt.jpg" alt="Bodyweight Exercises" />
+          <h3>Bodyweight Basics</h3>
+          <p>Push-ups, squats, and planks help build strength without any equipment.</p>
+        </article>
+        <article class="tip-card">
+          <img src="water.jpg" alt="Hydration Tips" />
+          <h3>Stay Hydrated</h3>
+          <p>Drink water before, during, and after workouts to keep energy levels up.</p>
+        </article>
+        <article class="tip-card">
+          <img src="rest.jpg" alt="Rest and Recovery" />
+          <h3>Rest & Recovery</h3>
+          <p>Allow muscles to recover by including rest days in your routine.</p>
+        </article>
+        <article class="tip-card">
+          <img src="nutri.jpg" alt="Proper Nutrition" />
+          <h3>Proper Nutrition</h3>
+          <p>Eat balanced meals with protein and healthy carbs to fuel your progress.</p>
+        </article>
+        <article class="tip-card">
+          <img src="consi.jpg" alt="Stay Consistent" />
+          <h3>Stay Consistent</h3>
+          <p>Commit to regular workouts, aiming for at least 3 sessions per week.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="daily-routine">
+      <h3>Sample Daily Beginner Routine</h3>
+      <ul>
+        <li>5 minutes warm-up (jumping jacks or brisk walking)</li>
+        <li>10 push-ups (modify with knees down if needed)</li>
+        <li>15 bodyweight squats</li>
+        <li>20-second plank</li>
+        <li>15 lunges (each leg)</li>
+        <li>5 minutes cool-down stretching</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">Weekly Workout Plan</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Workout</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>Full Body Strength</td><td>Push-ups, squats, planks</td></tr>
+          <tr><td>Tuesday</td><td>Cardio & Mobility</td><td>Jump rope, stretching</td></tr>
+          <tr><td>Wednesday</td><td>Core Focus</td><td>Planks, bicycle crunches</td></tr>
+          <tr><td>Thursday</td><td>Lower Body Strength</td><td>Squats, lunges, glute bridges</td></tr>
+          <tr><td>Friday</td><td>Upper Body Strength</td><td>Push-ups, rows, planks</td></tr>
+          <tr><td>Saturday</td><td>Active Rest</td><td>Light stretching and walking</td></tr>
+          <tr><td>Sunday</td><td>Rest</td><td>Recovery and hydration</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="quote-section">
+      “Strength does not come from physical capacity. It comes from an indomitable will.” – Mahatma Gandhi
+    </section>
+
+    <section class="faq">
+      <div>
+        <div class="faq-question">How long should a beginner workout last?</div>
+        <div class="faq-answer">Typically, 20-30 minutes per session is enough to start with.</div>
+      </div>
+      <div>
+        <div class="faq-question">How often should I work out as a beginner?</div>
+        <div class="faq-answer">Aim for 3-4 times per week with rest days in between.</div>
+      </div>
+      <div>
+        <div class="faq-question">Do I need any equipment?</div>
+        <div class="faq-answer">No equipment is needed to start — bodyweight exercises work great!</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Beginner Workouts. All rights reserved.
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

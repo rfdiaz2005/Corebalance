@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Feedback - CoreBalance</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #1a1a1a; /* ray black */
+      color: #facc15; /* yellow highlight */
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 2px solid #333;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-family: 'Orbitron', sans-serif;
+      color: #facc15;
+      text-shadow: 0 0 10px #facc15aa;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      color: #facc15;
+      letter-spacing: 1px;
+    }
+
+    .feedback-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 10px;
+    }
+
+    .feedback-box {
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 25px 20px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .feedback-box:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(250, 204, 21, 0.3);
+    }
+
+    .feedback-box::before {
+      content: "★";
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 2rem;
+      color: #facc15;
+      opacity: 0.7;
+    }
+
+    .feedback-box p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      color: white; /* now white text */
+      padding-top: 10px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 60px;
+      background: #facc15;
+      color: #1a1a1a;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 0 15px #facc15aa;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn i {
+      margin-right: 8px;
+    }
+
+    .back-btn:hover {
+      background: #eab308;
+      box-shadow: 0 0 25px #facc15ee;
+    }
+
+    footer {
+      background: #111;
+      padding: 30px 20px;
+      text-align: center;
+      color: #888;
+      font-size: 0.95rem;
+      margin-top: 60px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .container {
+        padding: 30px 15px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .back-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>All Feedback</h1>
+  </header>
+
+  <div class="container">
+    <h2>What Our Users Say 💬</h2>
+    <div class="feedback-boxes" id="allFeedback"></div>
+
+    <div style="text-align:center;">
+      <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 COREBALANCE. All rights reserved.
+  </footer>
+
+  <script>
+    // Load feedback from localStorage and display
+    const feedbackList = JSON.parse(localStorage.getItem("userFeedbackList")) || [];
+    const container = document.getElementById("allFeedback");
+
+    if (feedbackList.length === 0) {
+      container.innerHTML = "<p style='text-align:center; color: white;'>No feedback available yet.</p>";
+    } else {
+      feedbackList.forEach(feedback => {
+        const box = document.createElement("div");
+        box.classList.add("feedback-box");
+        box.innerHTML = `<p>“${feedback}”</p>`;
+        container.appendChild(box);
+      });
+    }
+  </script>
+
+</body>
+</html>

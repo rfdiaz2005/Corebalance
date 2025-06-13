@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sleep & Rest | Improve Recovery & Performance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(90deg, #222, #444);
+      padding: 60px 20px 80px;
+      text-align: center;
+      color: #ffdd00;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      animation: fadeInDown 1s ease forwards;
+    }
+    header p {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #ffdd00cc;
+      letter-spacing: 1px;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      border: 2px solid #ffdd00;
+      color: #ffdd00;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      z-index: 10;
+    }
+    .back-button:hover {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+    main {
+      max-width: 900px;
+      margin: 60px auto 80px;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.4s; }
+    section:nth-child(4) { animation-delay: 0.6s; }
+    section:nth-child(5) { animation-delay: 0.8s; }
+    h2 {
+      color: #ffdd00;
+      margin-bottom: 20px;
+      font-size: 2.4rem;
+      border-bottom: 3px solid #ffdd00;
+      padding-bottom: 12px;
+      letter-spacing: 1.5px;
+    }
+    p {
+      font-size: 1.15rem;
+      color: #ddd;
+      margin-bottom: 15px;
+    }
+    .tip-list, .routine-list {
+      background: #222;
+      border-left: 6px solid #ffdd00;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 8px 20px rgba(255, 221, 0, 0.35);
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 18px;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      color: #eee;
+      position: relative;
+      padding-left: 35px;
+      transition: color 0.3s ease;
+    }
+    li::before {
+      content: "✓";
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ffdd00;
+      font-weight: 900;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    li:hover {
+      color: #ffdd00;
+    }
+    li:hover::before {
+      color: #fff;
+    }
+    /* Image cards for sections */
+    .image-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .image-card div {
+      background: #333;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(255, 221, 0, 0.2);
+      overflow: hidden;
+      width: 250px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .image-card div:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 221, 0, 0.6);
+    }
+    .image-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 3px solid #ffdd00;
+    }
+    .image-card p {
+      padding: 15px 10px;
+      font-size: 1rem;
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+      background: #111;
+    }
+    /* FAQ section */
+    .faq {
+      background: #222;
+      border-left: 6px solid #ffdd00;
+      border-radius: 12px;
+      padding: 25px 30px;
+      box-shadow: 0 8px 20px rgba(255, 221, 0, 0.35);
+      color: #fff;
+    }
+    .faq p {
+      margin-bottom: 18px;
+    }
+    .faq strong {
+      color: #ffdd00;
+    }
+    footer {
+      background: #333;
+      text-align: center;
+      padding: 25px 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      letter-spacing: 0.7px;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      main {
+        margin: 40px 15px 60px;
+      }
+      .image-card div {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="categories.html" class="back-button">← Back to Categories</a>
+    <h1>Sleep & Rest</h1>
+    <p>Improve your recovery and performance through better sleep habits.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Why Sleep Matters</h2>
+      <p>Good sleep is essential for muscle recovery, mental focus, and overall health. It helps regulate hormones, improves immune function, and supports cognitive performance.</p>
+      <div class="image-card">
+        <div>
+          <img src="sleep.jpg" alt="Peaceful sleep" />
+          <p>Peaceful Sleep</p>
+        </div>
+        <div>
+          <img src="rest.jpg" alt="Healthy rest" />
+          <p>Healthy Rest</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Top Tips for Better Sleep</h2>
+      <div class="tip-list">
+        <ul>
+          <li>Maintain a consistent sleep schedule — go to bed and wake up at the same time every day.</li>
+          <li>Create a relaxing bedtime routine: read a book, meditate, or take a warm bath.</li>
+          <li>Avoid caffeine, heavy meals, and intense exercise close to bedtime.</li>
+          <li>Keep your bedroom cool, dark, and quiet for optimal sleep environment.</li>
+          <li>Limit screen time before bed; blue light disrupts your natural sleep cycle.</li>
+          <li>Invest in a comfortable mattress and pillows.</li>
+          <li>Practice deep breathing or progressive muscle relaxation to ease into sleep.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sleep & Rest Routine</h2>
+      <div class="routine-list">
+        <ul>
+          <li><strong>Evening wind-down:</strong> Dim lights 1 hour before sleep and avoid screens.</li>
+          <li><strong>Hydration:</strong> Drink water earlier in the day, reduce fluids before bed.</li>
+          <li><strong>Light stretches:</strong> Gentle neck and shoulder stretches to release tension.</li>
+          <li><strong>Mindfulness meditation:</strong> Spend 5-10 minutes focusing on breath to relax.</li>
+          <li><strong>Consistent wake-up:</strong> Use natural light or a gentle alarm to wake up.</li>
+          <li><strong>Power naps:</strong> 10-20 minute naps early in the day to boost alertness.</li>
+          <li><strong>Limit naps after 3 PM:</strong> Avoid disrupting nighttime sleep.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>FAQs</h2>
+      <div class="faq">
+        <p><strong>Q: How many hours of sleep do I need?</strong><br />Most adults need 7-9 hours for optimal health and recovery.</p>
+        <hr style="border-color:#ffdd00; margin: 15px 0;">
+        <p><strong>Q: What if I can’t fall asleep?</strong><br />Try relaxation techniques like deep breathing or progressive muscle relaxation.</p>
+        <hr style="border-color:#ffdd00; margin: 15px 0;">
+        <p><strong>Q: Can naps replace nighttime sleep?</strong><br />Naps are supplemental; prioritize consistent, quality nighttime sleep.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Corebalance. All rights reserved.
+  </footer>
+</body>
+</html>
