@@ -210,38 +210,6 @@
   <!-- Section 2: Nutrition -->
   <section class="section nutrition-section">
     <h2>Good nutrition fuels every part of your life. Eat smart, live well.</h2>
-    <p>Find the Right Food for Your Body</p>
-    <p>Search any nutrient, food, or health goal — we’ll show you what to eat.</p>
-    <input type="text" id="searchInput" placeholder="Search here..." onkeypress="handleSearch(event)">
-    <div class="tags">
-      <span onclick="goToPage('protein')">#Protein</span>
-      <span onclick="goToPage('iron')">#Iron</span>
-      <span onclick="goToPage('weightloss')">#WeightLoss</span>
-      <span onclick="goToPage('healthysnacks')">#HealthySnacks</span>
-    </div>
-  </section>
-
-  <!-- JavaScript for Search -->
-  <script>
-    function handleSearch(event) {
-      if (event.key === 'Enter') {
-        const input = document.getElementById('searchInput').value.toLowerCase();
-        if (input.includes('fitness')) {
-          window.location.href = 'fitness.html';
-        } else if (input.includes('nutrition')) {
-          window.location.href = 'nutrition.html';
-        } else if (input.includes('wellness')) {
-          window.location.href = 'wellness.html';
-        } else {
-          alert('Page not found. Try searching for: fitness, nutrition, or wellness.');
-        }
-      }
-    }
-
-    function goToPage(tag) {
-      alert(`This would show articles about: ${tag}`);
-    }
-  </script>
-
+ 
 </body>
 </html>
