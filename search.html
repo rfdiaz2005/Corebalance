@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Search Results | CoreBalance</title>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -12,134 +13,135 @@
       margin: 0;
       padding: 20px;
     }
-
     h1 {
-      color: #ffdd00;
+      color: #facc15;
     }
-
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
     a {
-      color: #ffdd00;
+      color: #facc15;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
-    .result {
-      margin-bottom: 15px;
-    }
-
     .no-result {
+      color: #ff5555;
       margin-top: 20px;
-      color: #ff4444;
     }
-
     .suggestion {
       margin-top: 10px;
       color: #ccc;
     }
-
-    ul.suggestion {
-      padding-left: 20px;
-    }
-
-    ul.suggestion li {
-      margin-bottom: 8px;
-    }
-
-    form#retry-form {
-      margin-top: 1rem;
-    }
-
-    form#retry-form input {
-      padding: 8px;
-      border-radius: 4px;
-      border: none;
-      width: 200px;
-    }
-
-    form#retry-form button {
-      padding: 8px 16px;
+    mark {
       background-color: #facc15;
       color: black;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .back-home {
-      margin-top: 1rem;
-      display: block;
     }
   </style>
 </head>
 <body>
-
   <h1>Search Results</h1>
   <div id="results"></div>
 
   <script>
     const pages = [
-      { title: "Home", url: "index.html" },
-      { title: "About", url: "about.html" },
-      { title: "Articles", url: "article.html" },
-      { title: "Begin", url: "begin.html" },
-      { title: "Cardio", url: "cardio.html" },
-      { title: "Categories", url: "categories.html" },
-      { title: "Daily Routine", url: "daily.html" },
-      { title: "Anonymous Feedback", url: "feedback.html" },
-      { title: "Fitness", url: "fitness.html" },
-      { title: "Nutrition", url: "nutrition.html" },
-      { title: "Recovery", url: "recover.html" },
-      { title: "Sleep", url: "sleep.html" },
-      { title: "Stretch", url: "stretch.html" },
-      { title: "Targeted Fitness", url: "targetfit.html" },
-      { title: "Top 10 Superfoods", url: "top10.html" },
-      { title: "Strength Training", url: "train.html" },
-      { title: "Wellness Tips", url: "wellness.html" },
-      { title: "Why You Need Yoga", url: "yoga.html" }
+      { title: "Home", url: "index.html", desc: "Main page with featured content" },
+      { title: "About", url: "about.html", desc: "Learn more about CoreBalance" },
+      { title: "Articles", url: "article.html", desc: "Fitness, nutrition, wellness articles" },
+      { title: "Feedback", url: "feedback.html", desc: "Submit and read feedback" },
+      { title: "Top 10 Superfoods", url: "top10.html", desc: "List of powerful nutritional foods" },
+      { title: "Why You Need Yoga", url: "yoga.html", desc: "Benefits of yoga for mind and body" },
+      { title: "Stretch", url: "stretch.html", desc: "Daily stretch routines" },
+      { title: "Fitness", url: "fitness.html", desc: "Workout plans and guides" },
+      { title: "Nutrition", url: "nutrition.html", desc: "Healthy eating advice" },
+      { title: "Wellness", url: "wellness.html", desc: "Holistic wellness and recovery" },
+      { title: "Categories", url: "categories.html", desc: "Explore content categories" },
+      { title: "Daily", url: "daily.html", desc: "Your daily fitness tracker" },
+      { title: "Recover", url: "recover.html", desc: "How to recover after intense workouts" },
+      { title: "Train", url: "train.html", desc: "Strength training programs" },
+      { title: "Sleep", url: "sleep.html", desc: "Importance of rest and sleep" },
+      { title: "TargetFit", url: "targetfit.html", desc: "Targeted fitness routines" },
+      { title: "Cardio", url: "cardio.html", desc: "Cardio workouts and heart health" },
+      { title: "Begin", url: "begin.html", desc: "Start your fitness journey" }
     ];
 
-    const resultsDiv = document.getElementById('results');
     const query = new URLSearchParams(window.location.search).get('q')?.trim().toLowerCase();
+    const resultsDiv = document.getElementById('results');
+
+    const fuse = new Fuse(pages, {
+      keys: ["title", "desc"],
+      threshold: 0.4,
+      includeMatches: true
+    });
 
     if (!query) {
       window.location.href = "index.html";
     } else {
-      const matches = pages.filter(page => page.title.toLowerCase().includes(query));
-      if (matches.length > 0) {
-        matches.forEach(match => {
-          const div = document.createElement('div');
-          div.className = "result";
-          div.innerHTML = `<p><a href="${match.url}">${match.title}</a></p>`;
+      const results = fuse.search(query);
+
+      if (results.length > 0) {
+        const heading = document.createElement("p");
+        heading.innerHTML = `<strong>Showing results for:</strong> "${query}"`;
+        resultsDiv.appendChild(heading);
+
+        results.forEach(({ item, matches }) => {
+          const highlightedTitle = highlightMatch(item.title, matches, "title");
+          const highlightedDesc = highlightMatch(item.desc, matches, "desc");
+
+          const div = document.createElement("div");
+          div.innerHTML = `
+            <p><a href="${item.url}">${highlightedTitle}</a></p>
+            <p style="color: #ccc;">${highlightedDesc}</p>
+          `;
           resultsDiv.appendChild(div);
         });
 
-        // Add search again form and back link
+        // Add search again and back
         resultsDiv.innerHTML += `
-          <form id="retry-form" action="search.html" method="GET">
-            <input type="text" name="q" placeholder="Search again..." required>
-            <button type="submit">Search</button>
+          <form action="search.html" method="get" style="margin-top: 1rem;">
+            <input type="text" name="q" placeholder="Search again..." required style="padding: 8px; border-radius: 4px; border: none; width: 200px;">
+            <button type="submit" style="padding: 8px 16px; background-color: #d97706; color: white; border: none; border-radius: 4px; cursor: pointer;">Search</button>
           </form>
-          <a class="back-home" href="index.html">← Back to Home</a>
+          <p style="margin-top: 1rem;"><a href="index.html" style="color: #d97706;">← Back to Home</a></p>
         `;
       } else {
         resultsDiv.innerHTML = `
           <p class="no-result">No results found for "<strong>${query}</strong>".</p>
           <p class="suggestion">Try searching for:</p>
           <ul class="suggestion">
-            ${pages.map(p => `<li><a href="${p.url}">${p.title}</a></li>`).join('')}
+            ${pages.map(p => `<li><a href="${p.url}">${p.title}</a></li>`).join("")}
           </ul>
-          <form id="retry-form" action="search.html" method="GET">
-            <input type="text" name="q" placeholder="Search again..." required>
-            <button type="submit">Search</button>
+          <form action="search.html" method="get" style="margin-top: 1rem;">
+            <input type="text" name="q" placeholder="Search again..." required style="padding: 8px; border-radius: 4px; border: none; width: 200px;">
+            <button type="submit" style="padding: 8px 16px; background-color: #d97706; color: white; border: none; border-radius: 4px; cursor: pointer;">Search</button>
           </form>
-          <a class="back-home" href="index.html">← Back to Home</a>
+          <p style="margin-top: 1rem;"><a href="index.html" style="color: #d97706;">← Back to Home</a></p>
         `;
       }
     }
-  </script>
 
+    function highlightMatch(text, matches, key) {
+      const match = matches?.find(m => m.key === key);
+      if (!match) return text;
+
+      const ranges = match.indices;
+      let highlighted = '';
+      let lastIndex = 0;
+
+      ranges.forEach(([start, end]) => {
+        highlighted += text.slice(lastIndex, start) +
+          `<mark>${text.slice(start, end + 1)}</mark>`;
+        lastIndex = end + 1;
+      });
+
+      highlighted += text.slice(lastIndex);
+      return highlighted;
+    }
+  </script>
 </body>
 </html>
